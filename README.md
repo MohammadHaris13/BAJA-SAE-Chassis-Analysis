@@ -1,4 +1,4 @@
-# 🏎️ BAJA SAE Chassis Analysis
+# BAJA SAE Chassis Analysis
 
 **Duration:** Oct 2025
 **Domain:** Finite Element Analysis (FEA) | Vehicle Dynamics | Structural Design
@@ -6,7 +6,7 @@
 
 ---
 
-## 📘 Overview
+## Overview
 
 This project focuses on performing a **comprehensive Finite Element Analysis (FEA)** of a **BAJA SAE off-road vehicle chassis** to evaluate its **strength, stiffness, and vibration behavior** under various static and dynamic loading conditions.
 
@@ -14,7 +14,7 @@ The primary objective was to ensure **safety, rigidity, and durability** while m
 
 ---
 
-## ⚙️ Methodology
+## Methodology
 
 ### 1. Geometry Preparation
 
@@ -50,7 +50,7 @@ Simulated key load cases to evaluate chassis response:
 
 ---
 
-## 📊 Results
+## Results
 
 * **Stress Range:** 238 – 464 MPa
 * **Factor of Safety (FOS):** ≈ 2
@@ -59,14 +59,14 @@ Simulated key load cases to evaluate chassis response:
 
 ---
 
-## 💡 Design Insights
+## Design Insights
 
 * Suggested increasing **pipe wall thickness** or exploring **alternate materials** for improved fatigue life.
 * Identified critical stress regions near **suspension mounts** and **joint nodes**.
 
 ---
 
-## 🏁 Outcome
+## Outcome
 
 Successfully validated the BAJA SAE chassis design through a detailed **FEA-based structural assessment**, ensuring compliance with **safety and performance standards**.
 The optimized chassis demonstrated **high strength-to-weight efficiency**, **vibration stability**, and **crashworthiness** under all tested conditions.
@@ -75,7 +75,11 @@ The optimized chassis demonstrated **high strength-to-weight efficiency**, **vib
 
 <img width="634" height="420" alt="Screenshot 2025-10-31 181705" src="https://github.com/user-attachments/assets/89683a10-99f2-4dd8-a622-381813a01fee" />
 
---- 
+---
+
+<img width="1627" height="639" alt="Mesh" src="https://github.com/user-attachments/assets/512350e6-886e-45fe-a18c-f5d78c42b193" />
+
+---
 
 ![](https://github.com/MohammadHaris13/BAJA-SAE-Chassis-Analysis/raw/refs/heads/main/Media/BAJA_SAE_TT_TD.mp4) 
 
@@ -123,7 +127,6 @@ https://github.com/user-attachments/assets/b1941713-6583-4be1-92a9-78b73cdda677
 <img width="1625" height="634" alt="Side Impact Test" src="https://github.com/user-attachments/assets/59e6fea2-908f-470e-8e8d-1a3dc06d12d7" />
 <img width="1625" height="637" alt="Roll Over" src="https://github.com/user-attachments/assets/39892bdb-0743-4cd7-a67d-4879a9edf489" />
 <img width="1629" height="633" alt="Rear Impact Test" src="https://github.com/user-attachments/assets/ed4be795-599a-4f06-81cf-c8e15207a289" />
-<img width="1627" height="639" alt="Mesh" src="https://github.com/user-attachments/assets/512350e6-886e-45fe-a18c-f5d78c42b193" />
 <img width="1629" height="640" alt="Frontal Impact Test" src="https://github.com/user-attachments/assets/292c5897-5e0f-4317-9fa0-4a5dafe0f885" />
 
 
