@@ -1,75 +1,122 @@
 # BAJA SAE Chassis Analysis
 
-**Duration:** Oct 2025
-**Domain:** Finite Element Analysis (FEA) | Vehicle Dynamics | Structural Design
-**Tools Used:** ANSYS SpaceClaim, ANSYS Mechanical
+This project focuses on the **structural and dynamic analysis of a BAJA SAE vehicle chassis** using **ANSYS Workbench**. The goal was to ensure the chassis design is safe, lightweight, and capable of withstanding multiple real-world impact and load conditions.
 
 ---
 
-## Overview
+## Project Overview
 
-This project focuses on performing a **comprehensive Finite Element Analysis (FEA)** of a **BAJA SAE off-road vehicle chassis** to evaluate its **strength, stiffness, and vibration behavior** under various static and dynamic loading conditions.
-
-The primary objective was to ensure **safety, rigidity, and durability** while maintaining compliance with **BAJA SAE design standards**.
-
----
-
-## Methodology
-
-### 1. Geometry Preparation
-
-* Imported solid chassis model into **ANSYS SpaceClaim**.
-* Extracted **beam geometry** and assigned a **custom circular tube profile** (OD: 17.5 mm, ID: 16 mm).
-* Used **Connect** and **Merge** tools to close geometric gaps and ensure structural continuity.
-
-### 2. Material Definition
-
-* Created a **custom Structural Steel Alloy** with modified:
-
-  * Density
-  * Young’s Modulus
-  * Yield Strength
-
-### 3. Meshing
-
-* Performed **mesh generation and refinement** in ANSYS Mechanical.
-* Conducted a **mesh independence study** to validate element size for accuracy and computational efficiency.
-
-### 4. Static Structural Simulations
-
-Simulated key load cases to evaluate chassis response:
-
-| Test Type      | Load (N) | Purpose                          |
-| -------------- | -------- | -------------------------------- |
-| Frontal Impact | 33,000   | Assess frontal crash deformation |
-| Side Impact    | 13,720   | Evaluate lateral resistance      |
-| Rear Impact    | 13,750   | Check rear collision safety      |
-| Rollover       | 9,625    | Verify top load stability        |
-| Torsional      | Variable | Study twist under uneven loading |
-| Frontal Bump   | 8,250    | Assess shock mount deformation   |
+The BAJA SAE chassis was analyzed under **various loading conditions** including frontal, side, rear, rollover, torsional, and bump impacts, as well as a modal analysis to determine natural frequencies.  
+The workflow followed a systematic approach starting from beam extraction to full simulation and result interpretation.
 
 ---
 
-## Results
+## Workflow Summary
 
-* **Stress Range:** 238 – 464 MPa
-* **Factor of Safety (FOS):** ≈ 2
-* **Natural Frequencies:** 37 – 115 Hz (from modal analysis)
-* Design validated for **strength, stiffness, and vibration safety**.
+### **Step 1: Beam Extraction and Material Setup**
+- Imported chassis geometry into **ANSYS SpaceClaim**.  
+- Extracted **beam elements** from solid members and assigned **custom circular tube profile**  
+  - Outer radius: 17.5 mm  
+  - Inner radius: 16 mm  
+- Used **Connect Tool** to close beam gaps (max distance: 35 mm).  
+- Shared common vertices for continuity.  
+- Created **custom material (Structural Steel Alloy)** with modified mechanical properties:
+  - Density  
+  - Young’s Modulus  
+  - Yield Strength  
+  - Ultimate Tensile Strength  
 
 ---
 
-## Design Insights
+### **Step 2: Meshing & Static Structural Analyses**
 
-* Suggested increasing **pipe wall thickness** or exploring **alternate materials** for improved fatigue life.
-* Identified critical stress regions near **suspension mounts** and **joint nodes**.
+Performed mesh generation and simulations for **front and side impact** tests.
+
+#### 🔹 Frontal Impact Test
+- Applied force: **33,000 N (Z-direction)**  
+- Fixed firewall vertices  
+- Observed max stress: **≈ 464 MPa**  
+- Checked total deformation & stress flow animation  
+
+#### 🔹 Side Impact Test
+- Applied force: **13,720 N (X-direction)**  
+- Fixed opposite side vertices  
+- Observed lateral stress distribution and deformation patterns  
 
 ---
 
-## Outcome
+### **Step 3: Rollover, Rear Impact & Torsional Tests**
 
-Successfully validated the BAJA SAE chassis design through a detailed **FEA-based structural assessment**, ensuring compliance with **safety and performance standards**.
-The optimized chassis demonstrated **high strength-to-weight efficiency**, **vibration stability**, and **crashworthiness** under all tested conditions.
+#### 🔹 Rollover Test
+- Force: **9,625 N (Y-direction)** applied on top members  
+- Max stress: **≈ 238 MPa**  
+
+#### 🔹 Rear Impact Test
+- Force: **13,750 N (Z-direction)** applied on rear members  
+- Max stress: **≈ 338 MPa**
+
+#### 🔹 Torsional Test
+- Opposite vertical forces (**±6,875 N**) on front suspension mounts  
+- Rear vertices simply supported  
+- Evaluated torsional rigidity & deformation  
+
+---
+
+### **Step 4: Front Bump & Modal Analysis**
+
+#### 🔹 Front Bump Test
+- Force: **8,250 N (Y-direction)** on front right shock mount  
+- Fixed left mount and firewall  
+- Max stress: **≈ 257 MPa**  
+- Factor of Safety ≈ **2**
+
+#### 🔹 Modal Analysis
+- Fixed firewall region  
+- Extracted **6 mode shapes**  
+- Frequency range: **37–115 Hz**  
+- Verified chassis vibration characteristics and stability  
+
+---
+
+## Results Summary
+
+| Test Type          | Applied Load (N) | Max Stress (MPa) | FOS | Key Observation |
+|--------------------|------------------|------------------|-----|-----------------|
+| Frontal Impact     | 33,000           | 464              | 2.0 | High stress on front rails |
+| Side Impact        | 13,720           | ~400             | 2.1 | Stress on side members |
+| Rear Impact        | 13,750           | 338              | 2.3 | Rear deformation localized |
+| Rollover           | 9,625            | 238              | 2.5 | Top frame compression |
+| Torsional          | ±6,875           | Moderate         | 2.0 | Good rigidity |
+| Front Bump         | 8,250            | 257              | 2.0 | Shock mount region stress |
+| Modal Analysis     | —                | —                | —   | Natural freq: 37–115 Hz |
+
+---
+
+## Key Learnings
+- Gained hands-on experience with **beam-based modeling** in ANSYS SpaceClaim.  
+- Learned **load application and boundary condition setup** for static & modal analysis.  
+- Understood **stress flow and deformation behavior** in vehicle chassis systems.  
+- Developed proficiency in **interpreting simulation results and optimizing design parameters**.  
+
+---
+
+## Tools & Technologies
+- **ANSYS Workbench**  
+- **ANSYS SpaceClaim**  
+- **Static Structural & Modal Analysis Modules**  
+- **Finite Element Analysis (FEA)**  
+
+---
+
+## Skills Demonstrated
+- Finite Element Analysis (FEA)  
+- Structural Strength Evaluation  
+- Crash & Impact Simulation  
+- Modal (Vibration) Analysis  
+- Material and Profile Customization  
+- Mesh Generation & Validation  
+- Design Optimization  
+
 
 ---
 
@@ -145,6 +192,26 @@ https://github.com/user-attachments/assets/a0d4c077-cfe0-4792-b5ae-97714a12289d
 
 
 https://github.com/user-attachments/assets/b1941713-6583-4be1-92a9-78b73cdda677
+
+---
+
+
+---
+
+## Conclusion
+The analysis confirmed that the **BAJA SAE chassis design is structurally safe**, with all stresses within permissible limits and a satisfactory factor of safety.  
+Future improvements could involve **increasing pipe thickness** or exploring **alternate lightweight alloys** to enhance performance.
+
+---
+
+### Author
+**Mohammad Haris**  
+Final Year B.Tech – Mechanical Engineering  
+VIT-AP,Amaravati   
+[Linkedin Profile](https://linkedin.com/in/mohammad-haris-13032002) | [Email](mailto:mohammaddharis1303@gmail.com)
+
+---
+
 
 
 
